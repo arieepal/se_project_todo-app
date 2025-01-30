@@ -20,7 +20,7 @@ const checkInputValidity = (formElement, inputElement, settings) => {
       formElement,
       inputElement,
       inputElement.validationMessage,
-      settings,
+      settings
     );
   } else {
     hideInputError(formElement, inputElement, settings);
@@ -45,10 +45,10 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
 
 const setEventListeners = (formElement, settings) => {
   const inputList = Array.from(
-    formElement.querySelectorAll(settings.inputSelector),
+    formElement.querySelectorAll(settings.inputSelector)
   );
   const buttonElement = formElement.querySelector(
-    settings.submitButtonSelector,
+    settings.submitButtonSelector
   );
 
   toggleButtonState(inputList, buttonElement, settings);
@@ -60,7 +60,8 @@ const setEventListeners = (formElement, settings) => {
     });
   });
 };
-
+//the only argument we need to be passing to to the methods in the funtion
+// is  inputElement
 const enableValidation = (settings) => {
   const formElement = document.querySelector(settings.formSelector);
   formElement.addEventListener("submit", (evt) => {
